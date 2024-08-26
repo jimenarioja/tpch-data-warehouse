@@ -1,0 +1,33 @@
+version: 2
+sources:
+  - name: tcph
+    database: RAW
+    schema: TCPH_SF1
+    description: Benchmark TCP-H data for performance testing and analysis.
+    tables:
+      - name: CUSTOMER
+        description: Information about customers who have made purchases. Includes custkey, name, address, nationkey, phone, acctbal, mktsegment and comment
+      - name: LINEITEM
+        description: Details of items included in each order. Contains orderkey, partkey, suppkey, linenumber, quantity, extendedprice, discount, tax, returnflag, linestatus, shipdate, commitdate, receipdate, shipinstruct, shipmode and comment.
+      - name: NATION
+        description: Information about nations, including nationkey, name, regionkey and comment.
+      - name: ORDERS
+        description: Records of orders placed by customers. Includes orderkey, custkey, orderstatus, totalprice, orderdate, orderpriority, clerk, shippriority and comment.
+      - name: PART
+        description: Information about parts or products available for sale. Includes partkey, name, mfgr, brand, type, size, container, retailprice and comment.
+      - name: PARTSUPP
+        description: Information about the supply of parts, linking parts with the specific suppliers. Includes partkey, suppkey, availqty, supplycost, comment.
+      - name: REGION
+        description: Information about regions, including regionkey, name and comment.
+      - name: SUPPLIER
+        description: Information about suppliers, including suppkey, name, address, nationkey, phone, acctbal and comment.
+      - name: EVENT
+        description: Table containing information about various events. Includes event_id, start_date, end_date, nation, and event_name.
+      - name: ENTREGA
+        description: Table detailing the delivery performance timelines. Includes id_plazo_entrega and descripcion.
+      - name: STORE
+        description: Table with store details including location and contact information. Includes store_id, nation, name, and address.
+      - name: EXCHANGE_RATE
+        description: Table containing exchange rates for different nations and dates. Includes nation, order_date, and exchange_usd.
+      - name: TIME_ZONE
+        description: Table containing time zone information for different nations. Includes nation and utc.

@@ -1,0 +1,61 @@
+models:
+  - name: fct_daily_sales
+    description: "Daily sales fact table with enriched information including local and customer prices, delivery timelines, and more."
+    columns:
+      - name: ORDER_DATE
+        description: "Date when the order was placed."
+      - name: CUSTKEY
+        description: "Customer identifier."
+      - name: PARTKEY
+        description: "Part identifier for the item ordered."
+      - name: SUPPKEY
+        description: "Supplier identifier for the part."
+      - name: ORDERKEY
+        description: "Unique order key."
+      - name: ORDERTYPE
+        description: "Type of order: 'venta' (sale) or 'devolucion' (return)."
+      - name: STORE_ID
+        description: "Identifier for the store where the order was placed."
+      - name: EVENT_ID
+        description: "Event or promotion associated with the order."
+      - name: LOCAL_PRICE
+        description: "Price of the item in the local currency."
+      - name: CUSTOMER_PRICE
+        description: "Price of the item in the customer’s currency."
+      - name: LOCAL_DATETIME
+        description: "Date and time of the order in the store's local time."
+      - name: CUSTOMER_DATETIME
+        description: "Date and time of the order in the customer's local time."
+      - name: ID_PLAZO_ENTREGA
+        description: "Delivery time classification."
+      - name: TAX
+        description: "Tax applied to the order."
+      - name: QUANTITY
+        description: "Quantity of items ordered."
+      - name: LINENUMBER
+        description: "Line number in the order."
+      - name: LINESTATUS
+        description: "Status of the order line."
+      - name: ORDER_STATUS
+        description: "Status of the order."
+      - name: ORDER_PRIORITY
+        description: "Priority level of the order."
+      - name: SHIP_DATE
+        description: "Date when the order was shipped."
+      - name: RETURN_FLAG
+        description: "Indicator if the order was returned."
+      - name: COMMIT_DATE
+        description: "Date when the order was committed."
+      - name: RECEIPT_DATE
+        description: "Date when the order was received."
+      - name: SHIP_INSTRUCT
+        description: "Shipping instructions."
+      - name: SHIP_MODE
+        description: "Mode of shipment."
+      - name: CLERK
+        description: "Clerk identifier."
+    tests:
+      - unique:
+          column_name: ORDERKEY
+      - not_null:
+          column_name: ORDER_DATE

@@ -1,0 +1,13 @@
+models:
+  - name: dim_entrega
+    description: "Dimension table for delivery time classifications."
+    columns:
+      - name: ID_PLAZO_ENTREGA
+        description: "Identifier for the delivery time classification."
+        tests:
+          - unique
+          - not_null
+      - name: DESCRIPCION
+        description: "Description of the delivery time classification."
+        tests:
+          - not_null

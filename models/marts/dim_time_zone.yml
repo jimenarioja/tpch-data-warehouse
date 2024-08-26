@@ -1,0 +1,12 @@
+models:
+  - name: dim_time_zone
+    description: "Dimension table for time zones based on the country."
+    columns:
+      - name: nation
+        description: "Country associated with the time zone."
+        tests:
+          - not_null
+      - name: utc
+        description: "UTC offset for the time zone."
+        tests:
+          - not_null

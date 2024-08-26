@@ -1,0 +1,238 @@
+models:
+  - name: stg_customer
+    description: Staging model for the customer source table.
+    columns:
+      - name: C_CUSTKEY
+        description: Unique identifier for each customer.
+        tests:
+          - unique
+          - not_null
+      - name: C_NAME
+        description: Name of the customer.
+      - name: C_ADDRESS
+        description: Address of the customer.
+      - name: C_NATIONKEY
+        description: Reference to the nation in which the customer resides.
+      - name: C_PHONE
+        description: Phone number of the customer.
+      - name: C_ACCTBAL
+        description: Account balance of the customer.
+      - name: C_MKTSEGMENT
+        description: Market segment where the customer belongs.
+
+
+  - name: stg_lineitem
+    description: Staging model for the lineitem source table.
+    columns:
+      - name: L_ORDERKEY
+        description: Unique identifier for the order.
+      - name: L_PARTKEY
+        description: Identifier for the part being ordered.
+      - name: L_SUPPKEY
+        description: Identifier for the supplier of the part.
+      - name: L_LINENUMBER
+        description: Line number in the order.
+      - name: L_QUANTITY
+        description: Quantity of the part ordered.
+      - name: L_EXTENDEDPRICE
+        description: Extended price of the part ordered.
+      - name: L_DISCOUNT
+        description: Discount applied to the part.
+      - name: L_TAX
+        description: Tax applied to the part.
+      - name: L_RETURNFLAG
+        description: Flag indicating if the item was returned.
+      - name: L_LINESTATUS
+        description: Status of the line item.
+      - name: L_SHIPDATE
+        description: Shipping date of the line item.
+      - name: L_COMMITDATE
+        description: Date when the order was committed.
+      - name: L_RECEIPTDATE
+        description: Date when the line item was received.
+
+
+  - name: stg_nation
+    description: Staging model for the nation source table.
+    columns:
+      - name: N_NATIONKEY
+        description: Unique identifier for the nation.
+        tests:
+          - unique
+          - not_null
+      - name: N_NAME
+        description: Name of the nation.
+      - name: N_REGIONKEY
+        description: Identifier for the region the nation belongs to.
+      - name: N_COMMENT
+        description: Additional comments about the nation.
+
+
+  - name: stg_orders
+    description: Staging model for the orders source table.
+    columns:
+      - name: O_ORDERKEY
+        description: Unique identifier for the order.
+        tests:
+          - unique
+          - not_null
+      - name: O_CUSTKEY
+        description: Identifier for the customer who placed the order.
+      - name: O_ORDERSTATUS
+        description: Status of the order.
+      - name: O_TOTALPRICE
+        description: Total price of the order.
+      - name: O_ORDERDATE
+        description: Date when the order was placed.
+      - name: O_ORDERPRIORITY
+        description: Priority of the order.
+      - name: O_CLERK
+        description: Identifier for the clerk handling the order.
+      - name: O_SHIPPRIORITY
+        description: Shipping priority of the order.
+      - name: O_COMMENT
+        description: Additional comments about the order.
+
+
+  - name: stg_part
+    description: Staging model for the part source table. List of parts.
+    columns:
+      - name: P_PARTKEY
+        description: Unique identifier for the part.
+        tests:
+          - unique
+          - not_null
+      - name: P_NAME
+        description: Name of the part.
+      - name: P_MFGR
+        description: Manufacturer of the part.
+      - name: P_BRAND
+        description: Brand of the part.
+      - name: P_TYPE
+        description: Type of the part.
+      - name: P_SIZE
+        description: Size of the part.
+      - name: P_CONTAINER
+        description: Container type of the part.
+      - name: P_RETAILPRICE
+        description: Retail price of the part.
+
+
+  - name: stg_partsupp
+    description: Staging model for the partsupp source table.
+    columns:
+      - name: PS_PARTKEY
+        description: Identifier for the part.
+      - name: PS_SUPPKEY
+        description: Identifier for the supplier.
+      - name: PS_AVAILQTY
+        description: Available quantity of the part from the supplier.
+      - name: PS_SUPPLYCOST
+        description: Cost of supplying the part.
+      - name: PS_COMMENT
+        description: Additional comments about the supply of the part.
+
+
+  - name: stg_region
+    description: Staging model for the region source table.
+    columns:
+      - name: R_REGIONKEY
+        description: Unique identifier for the region.
+        tests:
+          - unique
+          - not_null
+      - name: R_NAME
+        description: Name of the region.
+      - name: R_COMMENT
+        description: Additional comments about the region.
+
+
+  - name: stg_supplier
+    description: Staging model for the supplier source table.
+    columns:
+      - name: S_SUPPKEY
+        description: Unique identifier for the supplier.
+        tests:
+          - unique
+          - not_null
+      - name: S_NAME
+        description: Name of the supplier.
+      - name: S_ADDRESS
+        description: Address of the supplier.
+      - name: S_NATIONKEY
+        description: Identifier for the nation where the supplier is located.
+      - name: S_PHONE
+        description: Phone number of the supplier.
+      - name: S_ACCTBAL
+        description: Account balance of the supplier.
+      - name: S_COMMENT
+        description: Additional comments about the supplier.
+
+
+  - name: stg_event
+    description: Staging model for the event source table.
+    columns:
+      - name: EVENT_ID
+        description: Unique identifier for the event.
+        tests:
+          - unique
+          - not_null
+      - name: START_DATE
+        description: Event start date.
+      - name: END_DATE
+        description: Event end date.
+      - name: NATION
+        description: Nation associated with the event.
+      - name: EVENT_NAME
+        description: Name of the event.
+
+
+  - name: stg_entrega
+    description: Staging model for the entrega source table.
+    columns:
+      - name: ID_PLAZO_ENTREGA
+        description: Unique identifier for the delivery time.
+        tests:
+          - unique
+          - not_null
+      - name: DESCRIPCION
+        description: Description of the delivery time.
+
+
+  - name: stg_store
+    description: Staging model for the store source table.
+    columns:
+      - name: STORE_ID
+        description: Unique identifier for the store.
+        tests:
+          - unique
+          - not_null
+      - name: NATION
+        description: Nation where the store is located.
+      - name: NAME
+        description: Name of the store.
+      - name: ADDRESS
+        description: Address of the store.
+
+
+  - name: stg_exchange_rate
+    description: Staging model for the exchange rate source table.
+    columns:
+      - name: NATION
+        description: Nation associated with the exchange rate.
+      - name: ORDER_DATE
+        description: Date of the exchange rate.
+      - name: EXCHANGE_USD
+        description: Exchange rate to USD.
+
+
+  - name: stg_time_zone
+    description: Staging model for the time zone source table.
+    columns:
+      - name: NATION
+        description: Nation associated with the time zone.
+        tests:
+          - unique
+          - not_null
+      - name: UTC
+        description: UTC offset for the time zone.

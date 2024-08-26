@@ -1,0 +1,16 @@
+models:
+  - name: dim_exchange_rate
+    description: "Dimension table for exchange rates with USD."
+    columns:
+      - name: nation
+        description: "Country associated with the exchange rate."
+        tests:
+          - not_null
+      - name: order_date
+        description: "Date of the exchange rate."
+        tests:
+          - not_null
+      - name: exchange_usd
+        description: "Exchange rate against USD."
+        tests:
+          - not_null

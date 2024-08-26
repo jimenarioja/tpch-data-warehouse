@@ -1,0 +1,25 @@
+models:
+  - name: dim_event
+    description: "Dimension table for events, including promotional or seasonal events."
+    columns:
+      - name: event_id
+        description: "Unique identifier for the event."
+        tests:
+          - unique
+          - not_null
+      - name: start_date
+        description: "Start date of the event."
+        tests:
+          - not_null
+      - name: end_date
+        description: "End date of the event."
+        tests:
+          - not_null
+      - name: nation
+        description: "Country associated with the event."
+        tests:
+          - not_null
+      - name: event_name
+        description: "Name of the event."
+        tests:
+          - not_null

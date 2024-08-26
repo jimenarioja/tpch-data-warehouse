@@ -1,0 +1,21 @@
+models:
+  - name: dim_store
+    description: "Dimension table for stores, including their location and details."
+    columns:
+      - name: store_id
+        description: "Unique identifier for the store."
+        tests:
+          - unique
+          - not_null
+      - name: nation
+        description: "Country where the store is located."
+        tests:
+          - not_null
+      - name: name
+        description: "Name of the store."
+        tests:
+          - not_null
+      - name: address
+        description: "Address of the store."
+        tests:
+          - not_null
